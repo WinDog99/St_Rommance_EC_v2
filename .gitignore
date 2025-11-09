@@ -1,1 +1,76 @@
-.next
+# =========================
+# Root (共通)
+# =========================
+# ルート直下の環境ファイル（置く場合に備えて）
+.env
+.env.*.local
+
+# OSごみ
+.DS_Store
+Thumbs.db
+Icon?
+.Spotlight-V100
+.Trashes
+
+# エディタ/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ログ類
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
+# Frontend (Next.js)
+# =========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+frontend/.vercel/
+frontend/.cache/
+frontend/dist/
+frontend/coverage/
+
+# Next.js 環境ファイル（例のみ残す）
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+!frontend/.env.example
+
+# =========================
+# Backend (Laravel / PHP)
+# =========================
+backend/vendor/
+backend/node_modules/
+
+# public/storage はシンボリックリンクなので無視
+backend/public/storage
+
+# storage配下は基本無視（例外として .gitignore は残す）
+backend/storage/*
+!backend/storage/.gitignore
+
+# bootstrap/cache 内は生成物のみ無視（.gitignore は残す）
+backend/bootstrap/cache/*
+!backend/bootstrap/cache/.gitignore
+
+# PHPUnit / テスト生成物
+backend/.phpunit.cache/
+backend/coverage/
+
+# Laravel 環境ファイル（例のみ残す）
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# composer 実体は無視（lockはコミット推奨）
+backend/composer.phar
